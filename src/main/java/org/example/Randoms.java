@@ -6,10 +6,8 @@ import java.util.Random;
 public class Randoms implements Iterable<Integer> {
 
     protected Random random;
-    private int min;
-    private int max;
-    private int count;
-    private int nextNumber;
+    private final int min;
+    private final int max;
 
     public Randoms(int min, int max) {
         this.min = min;
@@ -22,7 +20,7 @@ public class Randoms implements Iterable<Integer> {
         return new RandomIterator();
     }
 
-    private class RandomIterator implements Iterator<Integer>{
+    private class RandomIterator implements Iterator<Integer> {
         @Override
         public boolean hasNext() {
             return true;
@@ -30,7 +28,7 @@ public class Randoms implements Iterable<Integer> {
 
         @Override
         public Integer next() {
-            return random.nextInt(min,  max) ;
+            return random.nextInt(min, max);
         }
     }
 
